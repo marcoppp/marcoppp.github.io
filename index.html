@@ -121,27 +121,35 @@
           <h2 class="section-heading text-white">Integer a ipsum sit amet nunc malesuada venenatis eu quis eros.</h2>
           <hr class="light my-4">
           <p class="text-faded mb-4">ILorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus est, condimentum vel orci ac, hendrerit aliquet felis. Donec eu feugiat orci. Morbi vestibulum massa et mollis ornare.</p>
-          <button id="ajaxButton" type="button" class="btn btn-xl btn-primary">Make a request</button>
+          <button id="ajaxButton" type="button" class="btn btn-xl btn-light">Make a request</button>
           <!-- script for the Ajax button-->
           <script>
-            (function() {
-              var httpRequest;
-              document.getElementById("ajaxButton").addEventListener('click',  makeRequest);
+          (function() {
+            var httpRequest;
+            document.getElementById("ajaxButton").addEventListener('click', makeRequest);
 
-              function makeRequest(){
-                httpRequest = new XMLHttpRequest();
+            function makeRequest() {
+              httpRequest = new XMLHttpRequest();
 
-                if (!httpRequest){
-                  alert('Giving up :( Cannot create an XMLHTTP instance');
-                  return false;
-                }
-
-
-
-
-                
+              if (!httpRequest) {
+                alert('Giving up :( Cannot create an XMLHTTP instance');
+                return false;
               }
-            })
+              httpRequest.onreadystatechange = alertContents;
+              httpRequest.open('GET', 'test.html');
+              httpRequest.send();
+            }
+
+            function alertContents() {
+              if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                if (httpRequest.status === 200) {
+                  alert(httpRequest.responseText);
+                } else {
+                  alert('There was a problem with the request.');
+                }
+              }
+            }
+          })();
           </script>
           <!-- script for the Ajax button-->
         </div>
