@@ -64,7 +64,27 @@
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="css/creative.min.css" rel="stylesheet"> </head>
+  <link href="css/creative.min.css" rel="stylesheet"> 
+<!--
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+-->
+  <!-- script for the Ajax button-->
+  <script>
+  function init() {
+    document.getElementById('myButton1').onclick=function(){
+      window.location.hash = "name=mary";
+      yaCounterXXXXXX.hit('https://marcoppp.github.io/index.html#name=mary', {title: 'mary', referer: 'https://marcoppp.github.io'});
+    };
+    document.getElementById('myButton2').onclick=function(){
+      window.location.hash = "name=tom";
+      yaCounterXXXXXX.hit('https://marcoppp.github.io/index.html#name=tom', {title: 'tom', referer: 'https://marcoppp.github.io'});
+    };
+  }
+  window.onload=init;
+  </script>
+  <!-- script for the Ajax button-->
+
+  </head>
 
 <body id="page-top">
   <!-- Google Tag Manager (noscript) -->
@@ -121,37 +141,8 @@
           <h2 class="section-heading text-white">Integer a ipsum sit amet nunc malesuada venenatis eu quis eros.</h2>
           <hr class="light my-4">
           <p class="text-faded mb-4">ILorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lacus est, condimentum vel orci ac, hendrerit aliquet felis. Donec eu feugiat orci. Morbi vestibulum massa et mollis ornare.</p>
-          <button id="ajaxButton" type="button" class="btn btn-xl btn-light">Make a request</button>
-          <!-- script for the Ajax button-->
-          <script>
-          (function() {
-            var httpRequest;
-            document.getElementById("ajaxButton").addEventListener('click', makeRequest);
-
-            function makeRequest() {
-              httpRequest = new XMLHttpRequest();
-
-              if (!httpRequest) {
-                alert('Giving up :( Cannot create an XMLHTTP instance');
-                return false;
-              }
-              httpRequest.onreadystatechange = alertContents;
-              httpRequest.open('GET', 'test.html');
-              httpRequest.send();
-            }
-
-            function alertContents() {
-              if (httpRequest.readyState === XMLHttpRequest.DONE) {
-                if (httpRequest.status === 200) {
-                  alert(httpRequest.responseText);
-                } else {
-                  alert('There was a problem with the request.');
-                }
-              }
-            }
-          })();
-          </script>
-          <!-- script for the Ajax button-->
+          <input type="button" id="myButton1" class="btn btn-xl btn-light" value="Make a Mary"/>
+          <input type="button" id="myButton2" class="btn btn-xl btn-light" value="Make a Tom"/>
         </div>
       </div>
     </div>
