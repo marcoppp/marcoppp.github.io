@@ -75,10 +75,10 @@
   <script>
   function init() {
     document.getElementById('myButton1').onclick=function(){
-      window.location.hash = "name=terry";
+      window.location.hash = "#name=terry";
     };
     document.getElementById('myButton2').onclick=function(){
-      window.location.hash = "name=tommy";
+      window.location.hash = "#/name/tommy";
     };
   }
   window.onload=init;
@@ -100,6 +100,7 @@
       });
     // send it for tracking
     ga('send', 'pageview');
+    }
   }
   </script>
   <!-- script for the Ajax button-->
