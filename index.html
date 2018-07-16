@@ -85,14 +85,14 @@
 
   //sending new pageview to GA if hash has changed
   window.onhashchange = function gaSend() {
-    if (location.hash === "#/name/terry" || "#name=terry"){
+    if (window.location.hash === "#/name/terry" || "#name=terry"){
       // set new url and title
       ga('set', {
         page: '/index.html#name=terry',
         title: 'Terry Page'
       });
     }
-    if (location.hash === "#/name/tommy" || "#name=tommy"){
+    if (window.location.hash === "#/name/tommy" || "#name=tommy"){
       // set new url and title
       ga('set', {
         page: '/index.html#name=tommy',
