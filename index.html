@@ -40,13 +40,6 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-122118244-1', 'auto');
-  ga('set', {
-    page: '/#name=mary',
-    title: 'Mary'
-  }, {
-    page: '/#name=tom',
-    title: 'Tom'
-  });
   ga('send', 'pageview');
   </script>
   <!-- End Google Analytics -->
@@ -77,16 +70,23 @@
 <!--
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 -->
-  <!-- script for the Ajax button-->
+  <!-- script for the Ajax button
+-->
   <script>
   function init() {
     document.getElementById('myButton1').onclick=function(){
       window.location.hash = "name=mary";
       yaCounterXXXXXX.hit('https://marcoppp.github.io/index.html#name=mary', {title: 'mary', referer: 'https://marcoppp.github.io'});
+      // Sets the page field to "/#name=mary".
+      ga('set', 'page', "/#name=mary");
+      ga('send', 'pageview');
     };
     document.getElementById('myButton2').onclick=function(){
       window.location.hash = "name=tom";
       yaCounterXXXXXX.hit('https://marcoppp.github.io/index.html#name=tom', {title: 'tom', referer: 'https://marcoppp.github.io'});
+      // Sets the page field to "/#name=tom".
+      ga('set', 'page', "/#name=tom");
+      ga('send', 'pageview');
     };
   }
   window.onload=init;
