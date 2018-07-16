@@ -76,27 +76,31 @@
   function init() {
     document.getElementById('myButton1').onclick=function(){
       window.location.hash = "name=terry";
+    };
+    document.getElementById('myButton2').onclick=function(){
+      window.location.hash = "name=tommy";
+    };
+  }
+  window.onload=init;
+
+  //sending new pageview to GA if hash has changed
+  window.onhashchange = function gaSend() {
+    if (location.hash === "#/name/terry" || "#name=terry"){
       // set new url and title
       ga('set', {
         page: '/index.html#name=terry',
         title: 'Terry Page'
       });
-      // send it for tracking
-      ga('send', 'pageview');
-    };
-
-    document.getElementById('myButton2').onclick=function(){
-      window.location.hash = "name=tommy";
+    }
+    if (location.hash === "#/name/tommy" || "#name=tommy"){
       // set new url and title
       ga('set', {
         page: '/index.html#name=tommy',
         title: 'Tommy Page'
       });
-      // send it for tracking
-      ga('send', 'pageview');
-    };
+    // send it for tracking
+    ga('send', 'pageview');
   }
-  window.onload=init;
   </script>
   <!-- script for the Ajax button-->
 
