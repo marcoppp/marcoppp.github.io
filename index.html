@@ -77,15 +77,25 @@
     document.getElementById('myButton1').onclick=function(){
       window.location.hash = "name=terry";
       yaCounterXXXXXX.hit('https://marcoppp.github.io/index.html#name=mary', {title: 'mary', referer: 'https://marcoppp.github.io'});
-      // Sets the page field to "/#name=terry".
-      ga('set', 'page', '/index.html#name=terry');
+      // set new url and title
+      ga('set', {
+        page: '/index.html#name=terry',
+        title: 'Terry Page'
+      });
+
+      // send it for tracking
       ga('send', 'pageview');
     };
     document.getElementById('myButton2').onclick=function(){
-      window.location.hash = "name=tom";
+      window.location.hash = "name=tommy";
       yaCounterXXXXXX.hit('https://marcoppp.github.io/index.html#name=tom', {title: 'tom', referer: 'https://marcoppp.github.io'});
-      // Sets the page field to "/#name=tommy".
-      ga('set', 'page', '/index.html#name=tommy');
+      // set new url and title
+      ga('set', {
+        page: '/index.html#name=tommy',
+        title: 'Tommy Page'
+      });
+
+      // send it for tracking
       ga('send', 'pageview');
     };
   }
