@@ -11,7 +11,6 @@
         page: location.pathname + location.hash,
         title: location.hash
       });
-      alert("terry");
     }
     if (location.hash === "#/name/tommy" || location.hash === "#name=tommy"){
       // set new url and title
@@ -19,11 +18,9 @@
         page: location.pathname + location.hash,
         title: location.hash
       });
-     alert("tommy");
     }
     // send it for tracking
     ga('send', 'pageview');
-    alert("GOOGLEiswatching");
     }
   //sending new pageview to GA if hash has changed
   window.onhashchange = gaSend;
@@ -48,10 +45,9 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-122118244-1', 'auto');
-  if (window.location.hash == ""){
+  if (window.location.hash === ""){
     // send it for tracking
     ga('send', 'pageview');
-    alert("GOOGLEiswatching#no");
   } else {
     gaSend();
   }
